@@ -132,6 +132,13 @@
     <ClCompile Include="main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../3rdPartyLibs/include</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="test_state.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game_state.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="test_state.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,22 +5,22 @@
 class tiny_state
 {
 public:
-	virtual void Initialize(sf::RenderWindow &window)
+	virtual void Initialize(sf::RenderWindow* window)
 	{
 
 	}
 
-	virtual void Update(sf::RenderWindow &window)
+	virtual void Update(sf::RenderWindow* window)
 	{
 
 	}
 
-	virtual void Render(sf::RenderWindow &window)
+	virtual void Render(sf::RenderWindow* window)
 	{
 
 	}
 
-	virtual void Destroy(sf::RenderWindow &window)
+	virtual void Destroy(sf::RenderWindow* window)
 	{
 
 	}
@@ -77,6 +77,9 @@ public:
 		}
 	}
 private:
-	sf::RenderWindow window;
+	sf::RenderWindow* window;
 	tiny_state* state;
 };
+
+
+extern game_state coreState;

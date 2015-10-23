@@ -1,8 +1,15 @@
 #include <SFML/Window.hpp>
+#include "game_state.h"
+#include "test_state.h"
+
+game_state coreState;
 
 int main()
 {
-	sf::Window window(sf::VideoMode(800, 600), "Test Window");
+	sf::RenderWindow window(sf::VideoMode(800, 600), "Ping");
+
+	coreState.SetWindow(&window);
+	coreState.SetState(new test_state());
 
 	// run the program as long as the window is open
 	while (window.isOpen())
@@ -15,6 +22,8 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+		coreState.Update();
+		coreState.Render();
 	}
 
 	return 0;
