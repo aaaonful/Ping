@@ -25,6 +25,11 @@ public:
 
 	}
 
+	~tiny_state()
+	{
+
+	}
+
 };
 
 class game_state
@@ -46,6 +51,7 @@ public:
 		{
 			this->state->Destroy(this->window);
 		}
+		delete this->state;
 		this->state = state;
 		if (this->state != NULL)
 		{
@@ -83,3 +89,4 @@ private:
 
 
 extern game_state coreState;
+extern bool quitGame;
