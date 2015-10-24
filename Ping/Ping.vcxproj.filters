@@ -47,5 +47,8 @@
     <ClInclude Include="game_state.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
