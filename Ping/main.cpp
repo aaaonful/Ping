@@ -1,4 +1,5 @@
 #include <SFML/Window.hpp>
+#include <Windows.h>
 #include "game_state.h"
 #include "main_menu.h"
 
@@ -34,6 +35,8 @@ int main()
 		{
 			window.close();
 		}
+
+		Sleep(3);
 	}
 
 	return 0;

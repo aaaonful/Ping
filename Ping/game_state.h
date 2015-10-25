@@ -47,7 +47,6 @@ public:
 		{
 			this->state->Destroy(this->window);
 		}
-		delete this->state;
 		this->state = state;
 		if (this->state != NULL)
 		{

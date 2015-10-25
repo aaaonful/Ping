@@ -13,8 +13,21 @@ public:
 
 	void Load(std::string filename)
 	{
-		this->texture->loadFromFile("Graphics/sprites/" + filename);
+		if (!this->texture->loadFromFile("Graphics/sprites/" + filename))
+		{
+			printf("error loading texture");
+		}
 		this->setTexture(*this->texture);
+	}
+
+	virtual void Update()
+	{
+		this->move(this->velocity);
+	}
+
+	bool CheckCollision(Entity* entity)
+	{
+		return this->getGlobalBounds().intersects(entity->getGlobalBounds());
 	}
 
 	~Entity()
@@ -24,4 +37,7 @@ public:
 
 private:
 	sf::Texture* texture;
+
+protected:
+	sf::Vector2f velocity;
 };
